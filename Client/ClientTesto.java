@@ -36,6 +36,7 @@ public class ClientTesto {
 		
             // visualizza istruzioni
             System.out.println("Client-Testo: usa Ctrl-C per terminare, ENTER per spedire la linea di testo.\n");
+		 System.out.println("Prova");
 			
             // connessione concorrente al socket per ricevere i dati da Server
             listener l;

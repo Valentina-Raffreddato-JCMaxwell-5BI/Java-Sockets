@@ -24,6 +24,8 @@ class SocketWorker implements Runnable {
         
         BufferedReader in = null;
         PrintWriter out = null;
+        boolean contaNick = false;
+        String nickname = null;
         try{
           // connessione con il socket per ricevere (in) e mandare(out) il testo
           in = new BufferedReader(new InputStreamReader(client.getInputStream()));
@@ -37,11 +39,20 @@ class SocketWorker implements Runnable {
         int clientPort = client.getPort(); //il "nome" del mittente (client)
         while(line != null){
           try{
-            line = in.readLine();
-            //Manda lo stesso messaggio appena ricevuto con in aggiunta il "nome" del client
-            out.println("Server-->" + clientPort + ">> " + line);
-            //scrivi messaggio ricevuto su terminale
-            System.out.println(clientPort + ">> " + line);
+              if(contaNick == false)
+              {
+                  nickname = in.readLine();
+                  out.println("Benvenuto: " + nickname);
+                  contaNick = true;
+              }
+              else
+              {
+                line = in.readLine();
+                //Manda lo stesso messaggio appena ricevuto con in aggiunta il "nome" del client
+                out.println("Server-->" + nickname + ">> " + line);
+                //scrivi messaggio ricevuto su terminale
+                System.out.println(nickname + ">> " + line);
+              }
            } catch (IOException e) {
             System.out.println("lettura da socket fallito");
             System.exit(-1);
@@ -55,3 +66,4 @@ class SocketWorker implements Runnable {
         }
     }
 }
+

@@ -10,6 +10,7 @@
  */
 import java.net.*;
 import java.io.*;
+import java.util.Scanner;
 
 public class ClientTesto {
     
@@ -26,6 +27,8 @@ public class ClientTesto {
         }
 		
 	String hostName = args[0];
+        boolean contaNick = false;
+        Scanner in = new Scanner(System.in);
 	int portNumber = Integer.parseInt(args[1]);
 	try {
             // prendi l'indirizzo IP del server dalla linea di comando
@@ -54,12 +57,23 @@ public class ClientTesto {
             
             //leggi da linea di comando il testo da spedire al Server
             System.out.print(">"); //visualizza il prompt
-            while ((userInput = stdIn.readLine()) != null) {
-            	// scrittura del messaggio da spedire nel socket 
-		out.println(userInput);
-                System.out.println("Messaggio spedito al server: " + userInput);
-                System.out.print(">"); //visualizza il prompt
-            }
+
+                while ((userInput = stdIn.readLine()) != null)
+                {
+                    if(contaNick == false)
+                    {
+                        System.out.println("Inserisci il tuo nickname: ");
+                        out.println(in.nextLine());
+                        contaNick = true;
+                    }
+                    else
+                    {
+                       // scrittura del messaggio da spedire nel socket 
+                        out.println(userInput);
+                        System.out.println("Messaggio spedito al server: " + userInput);
+                        System.out.print(">"); //visualizza il prompt 
+                    }
+                }
             // chiusura socket
             clientSocket.close();
             System.out.println("connessione terminata!");
@@ -68,3 +82,4 @@ public class ClientTesto {
     }
     
 }
+

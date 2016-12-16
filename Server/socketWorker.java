@@ -12,6 +12,7 @@ import java.io.*;
  */
 class SocketWorker implements Runnable {
   private Socket client;
+  public String nickname;
 
     //Constructor: inizializza le variabili
     SocketWorker(Socket client) {
@@ -25,7 +26,7 @@ class SocketWorker implements Runnable {
         BufferedReader in = null;
         PrintWriter out = null;
         boolean contaNick = false;
-        String nickname = null;
+        
         try{
           // connessione con il socket per ricevere (in) e mandare(out) il testo
           in = new BufferedReader(new InputStreamReader(client.getInputStream()));
@@ -39,12 +40,24 @@ class SocketWorker implements Runnable {
         int clientPort = client.getPort(); //il "nome" del mittente (client)
         while(line != null){
           try{
+              
+              if(line.equals("/listautenti") || line.equals("/listaUtenti"))
+              {
+                  for(int i = 0; i < ServerTestoMultiThreaded.listaUtenti.size(); i++)
+                  {
+                      out.println(ServerTestoMultiThreaded.listaUtenti.get(i).nickname);
+                  }
+              }
+              
               if(contaNick == false)
               {
                   nickname = in.readLine();
                   out.println("Benvenuto: " + nickname);
                   contaNick = true;
               }
+              
+              
+              
               else
               {
                 line = in.readLine();
@@ -66,4 +79,3 @@ class SocketWorker implements Runnable {
         }
     }
 }
-

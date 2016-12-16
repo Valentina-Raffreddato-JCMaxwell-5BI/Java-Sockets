@@ -10,9 +10,12 @@
  */
 import java.net.*;
 import java.io.*;
+import java.util.LinkedList;
 
-public class ServerTestoMultiThreaded {
-
+public class ServerTestoMultiThreaded
+{
+    static LinkedList<SocketWorker> listaUtenti = new LinkedList<SocketWorker>(); // Creo una lista di socket, da cui estrarrò il nickname assegnato ad ogni socket
+    
     public static void main(String[] args) {
 
         if (args.length != 1) {
@@ -32,6 +35,7 @@ public class ServerTestoMultiThreaded {
                 try {
                     //server.accept returns a client connection
                     w = new SocketWorker(server.accept());
+                    listaUtenti.add(w); // Inserisco il socket nella lista degli utenti connessi
                     Thread t = new Thread(w);
                     t.start();
                 } catch (IOException e) {

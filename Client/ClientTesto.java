@@ -66,7 +66,7 @@ public class ClientTesto {
                     {
                         System.out.println("Inserisci il tuo nickname: ");
                         out.println(in.nextLine());
-                        contaNick = true;
+                        nickPresente = true;
                     }
 		  // ---------------------------------------------------------------------------------------
                     else

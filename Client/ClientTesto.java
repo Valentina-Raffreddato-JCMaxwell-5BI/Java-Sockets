@@ -10,6 +10,7 @@
  */
 import java.net.*;
 import java.io.*;
+import java.util.Scanner;
 
 public class ClientTesto {
     
@@ -26,7 +27,10 @@ public class ClientTesto {
         }
 		
 	String hostName = args[0];
+	boolean nickPresente = false; // Booleano che verifica se il nick è già stato inserito o meno
+        Scanner in = new Scanner(System.in); // Scanner per richiesta input nickname
 	int portNumber = Integer.parseInt(args[1]);
+	    
 	try {
             // prendi l'indirizzo IP del server dalla linea di comando
             InetAddress address = InetAddress.getByName(hostName);
@@ -54,12 +58,22 @@ public class ClientTesto {
             
             //leggi da linea di comando il testo da spedire al Server
             System.out.print(">"); //visualizza il prompt
-            while ((userInput = stdIn.readLine()) != null) {
-            	// scrittura del messaggio da spedire nel socket 
-		out.println(userInput);
-                System.out.println("Messaggio spedito al server: " + userInput);
-                System.out.print(">"); //visualizza il prompt
-            }
+		
+		  if(nickPresente == false) // Se il nickname non è stato ancora inserito
+                    {
+                        System.out.println("Inserisci il tuo nickname: ");
+                        out.println(in.nextLine());
+                        nickPresente = true;
+                    }
+
+                while ((userInput = stdIn.readLine()) != null) // Fino a quando ciò che l'utente ha inserito è diverso da null, esegue il ciclo
+                {
+		  	// scrittura del messaggio da spedire nel socket 
+                        out.println(userInput);
+                        System.out.println("Messaggio spedito al server: " + userInput);
+                        System.out.print(">"); //visualizza il prompt 
+                    
+                }
             // chiusura socket
             clientSocket.close();
             System.out.println("connessione terminata!");
@@ -68,3 +82,4 @@ public class ClientTesto {
     }
     
 }
+

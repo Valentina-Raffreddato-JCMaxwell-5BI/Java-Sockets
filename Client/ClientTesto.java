@@ -58,24 +58,21 @@ public class ClientTesto {
             
             //leggi da linea di comando il testo da spedire al Server
             System.out.print(">"); //visualizza il prompt
-
-                while ((userInput = stdIn.readLine()) != null) // Fino a quando ciò che l'utente ha inserito è diverso da null, esegue il ciclo
-                {
-		   // ----------------------------- DA MIGLIORARE -----------------------------------------	
-                    if(nickPresente == false) // Se il nickname non è stato ancora inserito
+		
+		  if(nickPresente == false) // Se il nickname non è stato ancora inserito
                     {
                         System.out.println("Inserisci il tuo nickname: ");
                         out.println(in.nextLine());
                         nickPresente = true;
                     }
-		  // ---------------------------------------------------------------------------------------
-                    else
-                    {
-                       // scrittura del messaggio da spedire nel socket 
+
+                while ((userInput = stdIn.readLine()) != null) // Fino a quando ciò che l'utente ha inserito è diverso da null, esegue il ciclo
+                {
+		  	// scrittura del messaggio da spedire nel socket 
                         out.println(userInput);
                         System.out.println("Messaggio spedito al server: " + userInput);
                         System.out.print(">"); //visualizza il prompt 
-                    }
+                    
                 }
             // chiusura socket
             clientSocket.close();

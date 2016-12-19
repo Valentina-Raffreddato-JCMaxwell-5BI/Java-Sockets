@@ -27,9 +27,10 @@ public class ClientTesto {
         }
 		
 	String hostName = args[0];
-        boolean contaNick = false;
-        Scanner in = new Scanner(System.in);
+	boolean nickPresente = false; // Booleano che verifica se il nick è già stato inserito o meno
+        Scanner in = new Scanner(System.in); // Scanner per richiesta input nickname
 	int portNumber = Integer.parseInt(args[1]);
+	    
 	try {
             // prendi l'indirizzo IP del server dalla linea di comando
             InetAddress address = InetAddress.getByName(hostName);
@@ -58,14 +59,16 @@ public class ClientTesto {
             //leggi da linea di comando il testo da spedire al Server
             System.out.print(">"); //visualizza il prompt
 
-                while ((userInput = stdIn.readLine()) != null)
+                while ((userInput = stdIn.readLine()) != null) // Fino a quando ciò che l'utente ha inserito è diverso da null, esegue il ciclo
                 {
-                    if(contaNick == false)
+		   // ----------------------------- DA MIGLIORARE -----------------------------------------	
+                    if(nickPresente == false) // Se il nickname non è stato ancora inserito
                     {
                         System.out.println("Inserisci il tuo nickname: ");
-                        in.next();
-                        contaNick = true;
+                        out.println(in.nextLine());
+                        nickPresente = true;
                     }
+		  // ---------------------------------------------------------------------------------------
                     else
                     {
                        // scrittura del messaggio da spedire nel socket 

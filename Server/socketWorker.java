@@ -57,7 +57,9 @@ class SocketWorker implements Runnable {
                   nickname = in.readLine(); // Legge l'input dal clinet e lo assegna alla variabile nickname
                 
                 // -----------------------------DA MIGLIORARE-------------------------------
+                  out.println("---------------------------------------");
                   out.println("Benvenuto: " + nickname); // Da un messaggio di benvenuto
+                  out.println("---------------------------------------");
                 //---------------------------------------------------------------------------
                   nickPresente = true; // Il nickname è stato inserito quindi la variabile diventa true
               }
@@ -82,6 +84,17 @@ class SocketWorker implements Runnable {
             System.out.println("connessione con client: " + client + " terminata!");
         } catch (IOException e) {
             System.out.println("Errore connessione con client: " + client);
+        }
+        
+        if(client.isClosed())
+        {
+            for(int i = 0; i < ServerTestoMultiThreaded.listaUtenti.size(); i++)
+            {
+                if(ServerTestoMultiThreaded.listaUtenti.get(i).nickname.equals(nickname))
+                {
+                    ServerTestoMultiThreaded.listaUtenti.remove(i);
+                }
+            }
         }
     }
 }

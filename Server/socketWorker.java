@@ -4,15 +4,15 @@
  * di una indicazione che e' il testo che viene dal Server.
  */
 import java.net.*;
-import java.io.*;
+import java.io.*; //importazione delle librerie necessarie al funzionamento del programma
 
 /**
  *
  * @author Prof. Matteo Palitto
  */
 class SocketWorker implements Runnable {
-  private Socket client;
-  public String nickname;
+  private Socket client;  //variabile Socket privata
+  public String nickname;  //variabile Stringa pubblica
 
     //Constructor: inizializza le variabili
     SocketWorker(Socket client) {
@@ -56,9 +56,9 @@ class SocketWorker implements Runnable {
               {
                   nickname = in.readLine(); // Legge l'input dal clinet e lo assegna alla variabile nickname
                 
-                // -----------------------------DA MIGLIORARE-------------------------------
+                  out.println("-------------------------------");
                   out.println("Benvenuto: " + nickname); // Da un messaggio di benvenuto
-                //---------------------------------------------------------------------------
+                  out.println("-------------------------------");
                   nickPresente = true; // Il nickname è stato inserito quindi la variabile diventa true
               }
               
@@ -69,19 +69,46 @@ class SocketWorker implements Runnable {
                 //Manda lo stesso messaggio appena ricevuto con in aggiunta il "nome" del client
                 out.println("Server-->" + nickname + ">> " + line);
                 
+                out.println("--------------------------------");
+                
                 //scrivi messaggio ricevuto su terminale
                 System.out.println(nickname + ">> " + line);
+                
+                out.println("-------------------------------");
               }
-           } catch (IOException e) {
-            System.out.println("lettura da socket fallito");
-            System.exit(-1);
+            
+           } 
+          
+            catch (IOException e) {
+             System.out.println("lettura da socket fallito");
+             System.exit(-1);
            }
         }
-        try {
+      
+        try //se la lettura col socket fallisce termina la connessione 
+        {
             client.close();
-            System.out.println("connessione con client: " + client + " terminata!");
-        } catch (IOException e) {
+            out.println("-------------------------------");
+            System.out.println("connessione con client: " + client + " terminata!"); 
+            out.println("-------------------------------");
+        } 
+      
+        catch (IOException e) //nel caso non si potesse terminare correttamente la connessione, da' un errore all'utente
+        {
+            out.println("-------------------------------");
             System.out.println("Errore connessione con client: " + client);
+            out.println("-------------------------------");
+        }
+        
+        if(client.isClosed())
+        {
+            for(int i = 0; i < ServerTestoMultiThreaded.listaUtenti.size(); i++)
+            {
+                if(ServerTestoMultiThreaded.listaUtenti.get(i).nickname.equals(nickname))
+                {
+                    ServerTestoMultiThreaded.listaUtenti.remove(i);
+                }
+            }
         }
     }
 }

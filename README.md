@@ -1,13 +1,15 @@
 
 # Java-Sockets
 Concetti e realizzazione di una semplice connessione Client/Server usando Sockets in Java
-```
-Obitettivo del progetto: inviare linee di testo da un programma (Client)... -->
-                         --> ad un altro (Server) anche eventualmente remoto.
-```
-**Nota:** Visiona le [Slides della lezione](https://docs.google.com/presentation/d/19vhath-GbtUO7ofpukJE4Opi16aTfrnurJ2lUizB0iE/edit?usp=sharing)
+ # DESCRIZIONE DEL PROGETTO
+-A COSA SERVE?
+Serve ad inviare un messaggio attraverso il Prompt, pur sapendo che il Java Socket-Client rappresenta il mittente, mentre il Java   Socket-Server rappresenta il destinatario.
+
 ## Istruzioni
-Per replicare il progetto sul vostro computer personale. Gli allievi potranno quindi apportare modifiche ed eventualmente fonderle con il progetto principale, o in alcuni casi creare un progetto propio.
+Per prima cosa dovete andare su www.oracle.com e scaricare NetBeans (se non si ha).
+Una volta scaricato e installato dovete entrarci e poi andare su file e cliccare su New Project; apparirà una seconda finestra dove c'è un elenco e selezionate Java e poi cliccare su NEXT, poi inserirete il nome del progetto vicino Project Name in questo caso Java Socket-Client (mittente) prima di cliccare su FINISH togliere la spunta su Create Main Class.
+Creare anche il Java Socket-Server seguendo la stessa procedura qui sopra.
+Prarticamente una volta creato tutti e due i progetti   
 
 ### Prerequisiti
 Java SDK (Software Development Kit) - programma per la compilazione (javac) da codice in Java a ByteCode. L'installazione comprende anche Java JRE (Java Runtime Envirorment) che fornisce la Virtual Machine (VM) su cui far eseguire il ByteCode.

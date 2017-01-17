@@ -3,8 +3,11 @@
 Concetti e realizzazione di una semplice connessione Client/Server usando Sockets in Java
 
 # Descrizione del progetto
--A COSA SERVE?
-Serve ad effettuare una connessione client/server con l'utilizzo di Sockets, pur sapendo che il Java Socket-Client rappresenta il mittente, mentre il Java Socket-Server rappresenta il destinatario.
+Il progetto ha come obiettivo l'effettuare una connessione client/server attraverso l'utilizzo dei Sockets. 
+Ed inoltre la soluzione dei seguenti punti:
+* Richiedere il nickname quando un client si connette al server, visualizzando il nickname dopo aver inviato un messaggio
+* Utilizzare un comando /listautenti che permetta la visualizzazione della lista degli utenti connessi al server
+* Sviluppare una group chat
 
 ## Istruzioni
 -Per prima andare nel sito di Java e scaricare il pacchetto JDK. 

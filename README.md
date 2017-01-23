@@ -46,4 +46,4 @@ Ed inoltre la soluzione dei seguenti punti:
           
 -Tornate al prompt Server per vedere se il messaggio é stato inviato; se sì allora deve esserci anche scritto "Connesso con: Socket[addr=/127.0.0.1,port=49957,localport=1234]", significa che il server si é connesso con il client. 
 
-E avete fatto il vostro progetto!!
+E avete fatto il vostro progetto! 

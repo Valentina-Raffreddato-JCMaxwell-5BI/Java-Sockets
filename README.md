@@ -24,25 +24,27 @@ Ed inoltre la soluzione dei seguenti punti:
 
 -Dentro al primo prompt realizzate il server eseguendo questi punti:
 
-          1-vicino alla scritta c:\users\Utente> scrivete cd Documenti, che cd vi permette di muovere tra le varie cartelle, e dopo                 premete invio;
+          1-vicino alla scritta c:\users\Utente> scrivete cd Documenti, e dopo premete invio;
           
-          2-premuto invio vedete scritto questo: c:\users\Utente\Documenti>, significa che siete entrati sui documenti, e vicino                     dovete scrivere cd NetBeansProjects, che vi fa entrare su NetBeansProjects;
+          2-vicino a c:\users\Utente\Documenti>, scrivete cd NetBeansProjects;
           
-          3-vicino a c:\users\Utente\Documenti\NetBeansProjects> scrivete dir, sarebbe la directory ovvero la cartella, che una volta               premuto invio, vedete un elenco dove sono scritti tutti i progetti di Netbeans;
+          3-vicino a c:\users\Utente\Documenti\NetBeansProjects> scrivete dir e premete invio, e vedete un elenco dove sono scritti                 tutti i progetti di Netbeans;
           
           4-sotto ai progetti di NetBeans vedete di nuovo scritto c:\users\Utente\Documenti\NetBeansProjects> e questa volta scrivete               cd JavaSocket-Server, e siete entrati su JavaSocket-Server; 
           
-          5-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server> scrivete dir, e vedete scritto un'altro elenco.                 6-sotto a quell'elenco vedete di nuovo scritto c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server> e vicino                     scrivete cd dist, che sarebbe una cartella dove ci sono i file eseguibili;
+          5-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server> scrivete dir;
           
-          7-ora che siete dentro alla dist, vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server\dist> dovete scrivere             java -jar JavaSocket-Server.jar e scrivete quattro numeri a scelta, ad esempio 1234, perché rappresenta il numero della                 porta a cui ci vogliamo connettere; 
+          6-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server> scrivete cd dist, che sarebbe una cartella dove ci               sono i file eseguibili;
+          
+          7-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server\dist> scrivete java -jar JavaSocket-Server.jar e                   scrivete quattro numeri a scelta, ad esempio 1234; 
           
           8-premete invio e dopo vedete scritto "Server scritto in esecuzione....", significa che sta aspettando un messaggio da parte               del client dove adesso voi dovete andare sull'altro prompt a realizzarlo e scriverlo.
           
 -Dopo aver eseguito questi punti, andate sull'altro prompt (come dice nell'ultimo punto) per realizzare il client e scrivere il messaggio, eseguendo gli stessi punti che ci sono qui sopra, ma fino al punto 6, perché dopo dovete eseguire questi 2 punti importanti:
 
-          1-subito dopo che avete premuto invio a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Client> cd dist, dovete scrivere             vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Client\dist> java -jar JavaSocket-Client.jar, 127.0.0.1.,che             rappresenta il localhost e ti permette di connetterti, e dopo 1234 e premete invio;
+          1-scrivete vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Client\dist> java -jar JavaSocket-Client.jar,                   127.0.0.1., e dopo 1234 e premete invio;
           
-          2-premuto invio, vedete scritto "In ascolto con: Socket[addr=/127.0.0.1,port=1234,localport=49957]" e a capo il simbolo >, e               vicino al > potete scrivere quello che volete e dopo inviare comodamente il messaggio, premendo invio;  
+          2-ora vedete scritto "In ascolto con: Socket[addr=/127.0.0.1,port=1234,localport=49957]" e a capo il simbolo >, e                         vicino al > potete scrivere quello che volete e dopo inviare comodamente il messaggio, premendo invio;  
           
 -Tornate al prompt Server per vedere se il messaggio é stato inviato; se sì allora deve esserci anche scritto "Connesso con: Socket[addr=/127.0.0.1,port=49957,localport=1234]", significa che il server si é connesso con il client. 
 

@@ -26,19 +26,19 @@ Ed inoltre la soluzione dei seguenti punti:
 
           1-vicino alla scritta c:\users\Utente> scrivete cd Documenti, e dopo premete invio;
           
-          2-vicino a c:\users\Utente\Documenti>, scrivete cd NetBeansProjects;
+          2-vicino a c:\users\Utente\Documenti>, scrivete cd NetBeansProjects, e dopo premete invio;
+        
+          3-dopo scrivete dir e premete invio, e vedete un elenco dove sono scritti tutti i progetti di Netbeans;
           
-          3-vicino a c:\users\Utente\Documenti\NetBeansProjects> scrivete dir e premete invio, e vedete un elenco dove sono scritti tutti i progetti di Netbeans;
-          
-          4-sotto ai progetti di NetBeans vedete di nuovo scritto c:\users\Utente\Documenti\NetBeansProjects> e questa volta scrivete cd JavaSocket-Server, e siete entrati su JavaSocket-Server; 
+          4-sotto vedete scritto c:\users\Utente\Documenti\NetBeansProjects> e scrivete cd JavaSocket-Server; 
           
           5-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server> scrivete dir;
           
-          6-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server> scrivete cd dist, che sarebbe una cartella dove ci sono i file eseguibili;
+          6-successivamente scrivete cd dist, che sarebbe una cartella dove ci sono i file eseguibili;
+       
+          7-dopo scrivete java -jar JavaSocket-Server.jar, e scrivete quattro numeri a scelta, ad esempio 1234; 
           
-          7-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server\dist> scrivete java -jar JavaSocket-Server.jar, e scrivete quattro numeri a scelta, ad esempio 1234; 
-          
-          8-premete invio e dopo vedete scritto "Server scritto in esecuzione....", significa che sta aspettando un messaggio da parte del client dove adesso voi dovete andare sull'altro prompt a realizzarlo e scriverlo.
+-Premete invio e dopo vedete scritto "Server scritto in esecuzione....", significa che sta aspettando un messaggio da parte del client dove adesso voi dovete andare sull'altro prompt a realizzarlo e scriverlo.
           
 -Dopo aver eseguito questi punti, andate sull'altro prompt (come dice nell'ultimo punto) per realizzare il client e scrivere il messaggio, eseguendo gli stessi punti che ci sono qui sopra, ma fino al punto 6, perché dopo dovete eseguire questi 2 punti importanti:
 

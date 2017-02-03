@@ -28,23 +28,23 @@ Ed inoltre la soluzione dei seguenti punti:
           
           2-vicino a c:\users\Utente\Documenti>, scrivete cd NetBeansProjects;
           
-          3-vicino a c:\users\Utente\Documenti\NetBeansProjects> scrivete dir e premete invio, e vedete un elenco dove sono scritti                 tutti i progetti di Netbeans;
+          3-vicino a c:\users\Utente\Documenti\NetBeansProjects> scrivete dir e premete invio, e vedete un elenco dove sono                 scritti tutti i progetti di Netbeans;
           
-          4-sotto ai progetti di NetBeans vedete di nuovo scritto c:\users\Utente\Documenti\NetBeansProjects> e questa volta scrivete               cd JavaSocket-Server, e siete entrati su JavaSocket-Server; 
+          4-sotto ai progetti di NetBeans vedete di nuovo scritto c:\users\Utente\Documenti\NetBeansProjects> e questa volta                 scrivete cd JavaSocket-Server, e siete entrati su JavaSocket-Server; 
           
           5-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server> scrivete dir;
           
-          6-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server> scrivete cd dist, che sarebbe una cartella dove ci               sono i file eseguibili;
+          6-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server> scrivete cd dist, che sarebbe una cartella               dove ci sono i file eseguibili;
           
-          7-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server\dist> scrivete java -jar JavaSocket-Server.jar e                   scrivete quattro numeri a scelta, ad esempio 1234; 
+          7-vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Server\dist> scrivete java -jar JavaSocket-Server.jar             e scrivete quattro numeri a scelta, ad esempio 1234; 
           
-          8-premete invio e dopo vedete scritto "Server scritto in esecuzione....", significa che sta aspettando un messaggio da parte               del client dove adesso voi dovete andare sull'altro prompt a realizzarlo e scriverlo.
+          8-premete invio e dopo vedete scritto "Server scritto in esecuzione....", significa che sta aspettando un messaggio da             parte del client dove adesso voi dovete andare sull'altro prompt a realizzarlo e scriverlo.
           
 -Dopo aver eseguito questi punti, andate sull'altro prompt (come dice nell'ultimo punto) per realizzare il client e scrivere il messaggio, eseguendo gli stessi punti che ci sono qui sopra, ma fino al punto 6, perché dopo dovete eseguire questi 2 punti importanti:
 
-          1-scrivete vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Client\dist> java -jar JavaSocket-Client.jar,                   127.0.0.1., e dopo 1234 e premete invio;
+          1-scrivete vicino a c:\users\Utente\Documenti\NetBeansProjects\JavaSocket-Client\dist> java -jar JavaSocket-                       Client.jar, 127.0.0.1., e dopo 1234 e premete invio;
           
-          2-ora vedete scritto "In ascolto con: Socket[addr=/127.0.0.1,port=1234,localport=49957]" e a capo il simbolo >, e                         vicino al > potete scrivere quello che volete e dopo inviare comodamente il messaggio, premendo invio;  
+          2-ora vedete scritto "In ascolto con: Socket[addr=/127.0.0.1,port=1234,localport=49957]" e a capo il simbolo >, e                 vicino al > potete scrivere quello che volete e dopo inviare comodamente il messaggio, premendo invio;  
           
 -Tornate al prompt Server per vedere se il messaggio é stato inviato; se sì allora deve esserci anche scritto "Connesso con: Socket[addr=/127.0.0.1,port=49957,localport=1234]", significa che il server si é connesso con il client. 
 
